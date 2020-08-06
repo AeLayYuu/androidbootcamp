@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="editext"
+            type="com.aelayyuu.projectdatab.Edittext" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/txtb1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="#283694"
+        android:layout_margin="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtb2"
+        />
+    <EditText
+        android:id="@+id/txtb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Occupation"
+        android:textColor="#283694"
+        app:layout_constraintTop_toBottomOf="@+id/txtb1"
+        android:layout_margin="50sp"
+        android:layout_marginTop="50sp"/>
+    <Button
+        android:id="@+id/btnb1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print Me"
+        app:layout_constraintTop_toBottomOf="@+id/txtb2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtb3"/>
+    <TextView
+        android:id="@+id/txtb3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{editext.name}"
+        android:layout_margin="100sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnb1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txtb4"/>
+    <TextView
+        android:id="@+id/txtb4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@{editext.occupation}"
+        android:layout_margin="100sp"
+        app:layout_constraintTop_toBottomOf="@+id/txtb3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

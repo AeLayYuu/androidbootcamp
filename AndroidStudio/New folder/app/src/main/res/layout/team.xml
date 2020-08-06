@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Our Team"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm1"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/crdtm2"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bill" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txttma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bill Gates"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm1"
+        app:layout_constraintRight_toLeftOf="@+id/txttmb"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm2"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="200dp"
+        app:layout_constraintLeft_toRightOf="@+id/crdtm1"
+        app:layout_constraintRight_toLeftOf="@+id/crdtm3"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/jeff" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txttmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jeff Bezos"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toRightOf="@id/txttma"
+        app:layout_constraintRight_toLeftOf="@+id/txttmc"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm2" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="125dp"
+        app:layout_constraintLeft_toRightOf="@+id/crdtm2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/elon" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txttmc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elon Mask"
+        android:textColor="#000000"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm3"
+        app:layout_constraintLeft_toRightOf="@+id/txttmb"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm4"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="110dp"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintRight_toLeftOf="@+id/crdtm5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/zukar" />
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/txttmd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark Zukarbug"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm4"
+        app:layout_constraintRight_toLeftOf="@+id/txttme"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm5"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="200dp"
+        app:layout_constraintLeft_toRightOf="@+id/crdtm4"
+        app:layout_constraintRight_toLeftOf="@+id/crdtm6"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm2">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/edward" />
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/txttme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="edward Snowden"
+        android:textColor="#000000"
+        app:layout_constraintLeft_toRightOf="@id/txttmd"
+        app:layout_constraintRight_toLeftOf="@+id/txttmf"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdtm6"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="110dp"
+        app:cardCornerRadius="125dp"
+        app:layout_constraintLeft_toRightOf="@+id/crdtm5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm3">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sundar" />
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/txttmf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sundar Pichai"
+        android:textColor="#000000"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm6"
+        app:layout_constraintLeft_toRightOf="@+id/txttme"/>
+    <TextView
+        android:id="@+id/txttm1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mission"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/crdtm6"
+        android:layout_marginTop="45dp"/>
+
+    <LinearLayout
+        android:id="@+id/txttm2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txttm1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:padding="20sp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minLines="9"
+            android:maxLines="10"
+            android:text="@string/mission1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mission2"
+            android:minLines="3"
+            android:maxLines="4"
+            android:layout_marginTop="20sp"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
