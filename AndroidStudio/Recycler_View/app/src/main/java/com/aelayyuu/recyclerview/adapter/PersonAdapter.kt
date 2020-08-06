@@ -1,4 +1,4 @@
-package mm.com.fairway.fourthapprecyclerview.adapter
+package com.aelayyuu.recyclerview.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import com.aelayyuu.recyclerview.model.Person
 import kotlinx.android.synthetic.main.item_person.view.*
 
 class PersonAdapter(var personList:ArrayList<Person>) : RecyclerView.Adapter<PersonAdapter.PersonViewHolder>() {
-    var clickListener :ClickListener ? = null
+    var clickListener : ClickListener? = null
     fun setOnClickListener(clickListener: ClickListener){
         this.clickListener=clickListener
     }

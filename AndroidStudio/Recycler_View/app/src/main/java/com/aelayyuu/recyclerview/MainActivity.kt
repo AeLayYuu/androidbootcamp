@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.aelayyuu.recyclerview.model.Person
 import kotlinx.android.synthetic.main.activity_main.*
-import mm.com.fairway.fourthapprecyclerview.adapter.PersonAdapter
+import com.aelayyuu.recyclerview.adapter.PersonAdapter
 
 class MainActivity : AppCompatActivity(), PersonAdapter.ClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity(), PersonAdapter.ClickListener {
     override fun onClick(person: Person) {
         Toast.makeText(
             this,person.name,
-            Toast.LENGTH_LONG)
+            Toast.LENGTH_SHORT)
             .show()
     }
 }
