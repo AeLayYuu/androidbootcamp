@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".model.Header"></activity>
+        <activity android:name=".adapter.DescriptionAdapter"></activity>
+        <activity android:name=".model.Header" />
         <activity android:name=".adapter.HeaderAdapter" />
         <activity android:name=".MainActivity">
             <intent-filter>
