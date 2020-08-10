@@ -22,9 +22,9 @@ class OneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnNext.setOnClickListener{
-            findNavController().navigate(
-                R.id.action_oneFragment_to_twoFragment
-            )
+            //findNavController().navigate(R.id.action_oneFragment_to_twoFragment )
+            var action = OneFragmentDirections.actionOneFragmentToTwoFragment("Message from One Fragment")
+            findNavController().navigate(action)
         }
     }
 }

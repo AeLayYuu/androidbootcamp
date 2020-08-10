@@ -30,17 +30,17 @@
         android:layout_height="match_parent"
         android:layout_marginTop="50dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/RecyclerHeaderView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="410dp"
             android:layout_height="243dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerHeaderView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
             <ImageView
                 android:id="@+id/imgheader"
