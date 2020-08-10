@@ -17,11 +17,12 @@ class ProductAdapter (private var productlist : ArrayList<PopularProducts>) : Re
             itemView.txtheader6.text=popularProducts.nameproduct
             itemView.txtheader7.text=popularProducts.brandproduct
             itemView.txtheader8.text= popularProducts.priceproduct
+            itemView.imgproduct.setImageResource(popularProducts.imageproduct)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.activity_header_adapter,parent,false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_product,parent,false)
         return ProductViewHolder(view)
     }
 

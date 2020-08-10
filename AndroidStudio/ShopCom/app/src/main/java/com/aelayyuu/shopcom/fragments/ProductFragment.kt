@@ -36,7 +36,7 @@ class ProductFragment : Fragment() {
 
         RecyclerProductView.apply {
             layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, true)
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, true)
             adapter = ProductAdapter(headerList)
         }
     }

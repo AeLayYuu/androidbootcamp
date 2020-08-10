@@ -6,19 +6,21 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aelayyuu.shopcom.R
 import com.aelayyuu.shopcom.model.LatestArrivals
+import kotlinx.android.synthetic.main.fragment_description.view.*
 import kotlinx.android.synthetic.main.fragment_header.view.*
 
 class HeaderAdapter (private var headerlist : ArrayList<LatestArrivals>) : RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
     class HeaderViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         fun bindHeader(latestArrivals: LatestArrivals) {
-            itemView.txtheader3.text=latestArrivals.labelarrival
-            itemView.txtheader4.text=latestArrivals.captionarrival
+            itemView.txtheader1.text=latestArrivals.labelarrival
+            itemView.txtheader2.text=latestArrivals.captionarrival
             itemView.txtheader5.text= latestArrivals.pricearrival
+            itemView.imgheader.setImageResource(latestArrivals.imagearrival)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.activity_header_adapter,parent,false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_header,parent,false)
         return HeaderViewHolder(view)
     }
 

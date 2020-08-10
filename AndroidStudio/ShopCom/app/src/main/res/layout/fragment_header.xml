@@ -37,30 +37,28 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="410dp"
+            android:layout_height="243dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/imgheader"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/bkg" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/txtheader3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="500sp"
-                android:minLines="2"
-                android:text="Hyde Park N41015" />
+                android:minLines="2" />
 
             <TextView
                 android:id="@+id/txtheader4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="550sp"
-                android:text="Louis Vutton" />
+                android:layout_marginTop="550sp" />
 
             <TextView
                 android:id="@+id/txtheader5"

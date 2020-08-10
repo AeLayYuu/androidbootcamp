@@ -25,12 +25,11 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/Camera1"
+                android:id="@+id/imagedescription"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/canon" />
+                android:layout_marginBottom="20dp" />
 
             <TextView
                 android:id="@+id/txtcamera1"
@@ -39,7 +38,6 @@
                 android:layout_marginLeft="80sp"
                 android:layout_marginTop="170sp"
                 android:layout_marginRight="90sp"
-                android:text="Camera"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
 
@@ -50,7 +48,6 @@
                 android:layout_marginLeft="80sp"
                 android:layout_marginTop="200sp"
                 android:layout_marginRight="90sp"
-                android:text="New Product form Leica Brand"
                 android:textColor="#ffffff" />
 
         </androidx.cardview.widget.CardView>

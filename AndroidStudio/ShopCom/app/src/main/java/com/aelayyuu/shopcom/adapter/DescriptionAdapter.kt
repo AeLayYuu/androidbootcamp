@@ -13,11 +13,13 @@ class DescriptionAdapter (private var descriptionlist : ArrayList<CameraCard>) :
         fun bindHeader(cameraCard: CameraCard) {
             itemView.txtcamera1.text=cameraCard.labelcard
             itemView.txtcamera2.text=cameraCard.descriptioncard
+            itemView.imagedescription.setImageResource(cameraCard.cameracard)  //Important learn it don't lazy
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DescriptionViewHolder {
-        var view = LayoutInflater.from(parent.context).inflate(R.layout.activity_header_adapter,parent,false)
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.fragment_description,parent,false)
         return DescriptionViewHolder(view)
     }
 
