@@ -10,19 +10,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aelayyuu.newsioapi.R
 import com.aelayyuu.newsioapi.adapter.ItemAdapter
-import com.aelayyuu.newsioapi.api.ApiClient
 import com.aelayyuu.newsioapi.model.Article
-import com.aelayyuu.newsioapi.model.News
 import com.aelayyuu.newsioapi.viewmodel.NewViewModel
 import kotlinx.android.synthetic.main.fragment_top_headline.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-var newsViewHolder = NewViewModel()
-
-class TopHeadlineFragment : Fragment() {
-
+class DetailNewsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,9 +31,10 @@ class TopHeadlineFragment : Fragment() {
         newsViewHolder.getResult().observe(viewLifecycleOwner, Observer {
             RecyclerView.apply {
                 layoutManager= LinearLayoutManager(context)
-                adapter=ItemAdapter(it.articles as ArrayList<Article>)
+                adapter= ItemAdapter(it.articles as ArrayList<Article>)
 
             }
         })
+
     }
 }

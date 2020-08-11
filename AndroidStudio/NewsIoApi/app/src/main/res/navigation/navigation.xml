@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/topHeadlineFragment">
+
+    <fragment
+        android:id="@+id/topHeadlineFragment"
+        android:name="com.aelayyuu.newsioapi.fragments.TopHeadlineFragment"
+        android:label="TopHeadlineFragment" >
+        <action
+            android:id="@+id/action_topHeadlineFragment_to_detailNewsFragment"
+            app:destination="@id/detailNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="com.aelayyuu.newsioapi.fragments.DetailNewsFragment"
+        android:label="fragment_detail_news"
+        tools:layout="@layout/fragment_detail_news" />
+</navigation>
