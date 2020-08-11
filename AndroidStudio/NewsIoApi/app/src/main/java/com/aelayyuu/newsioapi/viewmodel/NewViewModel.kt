@@ -30,7 +30,7 @@ class NewViewModel : ViewModel() {
 
             override fun onResponse(call: Call<News>, response: Response<News>) {
                 loading.value = false
-                errorStatus = errorStatus.value
+                errorStatus.value = true
                 result.value = response.body()
             }
 

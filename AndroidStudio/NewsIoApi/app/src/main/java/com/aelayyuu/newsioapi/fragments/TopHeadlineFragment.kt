@@ -43,5 +43,30 @@ class TopHeadlineFragment : Fragment() {
 
             }
         })
+        newsViewHolder.getloading().observe(
+            viewLifecycleOwner, Observer {
+                isLoading ->
+                if (isLoading)
+                {
+                    View.VISIBLE
+                }
+                else{
+                    View.INVISIBLE
+                }
+            }
+        )
+        newsViewHolder.geterrorStatus().observe(
+            viewLifecycleOwner,Observer {
+                status ->
+                if (status){
+                    newsViewHolder.geterrorMessage().observe(
+                        viewLifecycleOwner, Observer {
+                            message ->
+                            txtResponse.text = message
+                        }
+                    )
+                }
+            }
+        )
     }
 }
