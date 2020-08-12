@@ -16,39 +16,39 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        getPosts()
+//        getPosts()
     }
-    fun getPosts(){
-        val apiClient = ApiClient()
-        val apiCall = apiClient.postApiService.getPost()
-
-        apiCall.enqueue(object : Callback<ArrayList<PostItem>>{
-            override fun onFailure(call: Call<ArrayList<PostItem>>, t: Throwable) {
-                txtResponse.text = t.toString()
-                Toast.makeText(
-                    applicationContext,
-                    t.toString(),
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-
-            override fun onResponse(
-                call: Call<ArrayList<PostItem>>,
-                response: Response<ArrayList<PostItem>>
-            ) {
-                txtResponse.text = response.body().toString()
-
-                recyclerView.apply {
-                    layoutManager = LinearLayoutManager(context)
-                    adapter = PostAdapter(response.body()!!)
-                }
-                Toast.makeText(
-                    applicationContext,
-                   response.message(),
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-
-        })
-    }
+//    fun getPosts(){
+//        val apiClient = ApiClient()
+//        val apiCall = apiClient.postApiService.getPost()
+//
+//        apiCall.enqueue(object : Callback<ArrayList<PostItem>>{
+//            override fun onFailure(call: Call<ArrayList<PostItem>>, t: Throwable) {
+//                txtResponse.text = t.toString()
+//                Toast.makeText(
+//                    applicationContext,
+//                    t.toString(),
+//                    Toast.LENGTH_LONG
+//                ).show()
+//            }
+//
+//            override fun onResponse(
+//                call: Call<ArrayList<PostItem>>,
+//                response: Response<ArrayList<PostItem>>
+//            ) {
+//                txtResponse.text = response.body().toString()
+//
+//                recyclerView.apply {
+//                    layoutManager = LinearLayoutManager(context)
+//                    adapter = PostAdapter(response.body()!!)
+//                }
+//                Toast.makeText(
+//                    applicationContext,
+//                   response.message(),
+//                    Toast.LENGTH_LONG
+//                ).show()
+//            }
+//
+//        })
+//    }
 }

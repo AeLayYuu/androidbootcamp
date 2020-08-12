@@ -60,6 +60,7 @@ class TopHeadlinesFragment : Fragment(), TopHeadlinesAdapter.CLickListener {
 
         newsViewModel.getLoading().observe(
             viewLifecycleOwner, Observer { isLoading ->
+                progressLoading.visibility =
                 if (isLoading) {
                     View.VISIBLE
                 } else {

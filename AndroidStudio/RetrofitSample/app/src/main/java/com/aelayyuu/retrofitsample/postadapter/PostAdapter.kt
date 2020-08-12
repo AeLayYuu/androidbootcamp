@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aelayyuu.retrofitsample.R
 import com.aelayyuu.retrofitsample.model.PostItem
-import kotlinx.android.synthetic.main.activity_main.view.*
 import kotlinx.android.synthetic.main.item_post.view.*
 
 class PostAdapter (var postList: ArrayList<PostItem>) : RecyclerView.Adapter<PostAdapter.PostViewHolder>(){
