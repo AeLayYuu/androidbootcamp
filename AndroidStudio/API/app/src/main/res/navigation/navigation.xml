@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/topFragment">
+    <fragment
+        android:id="@+id/topFragment"
+        android:name="com.wya.api.fragments.TopHeadlinesFragment"
+        tools:layout="@layout/fragment_top_headlines">
+        <action
+            android:id="@+id/action_topFragment_to_nextFragment"
+            app:destination="@id/nextFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nextFragment"
+        android:name="com.wya.api.fragments.NextFragment"
+        tools:layout="@layout/fragment_next">
+        <argument
+            android:name="Name"
+            app:argType="string" />
+    </fragment>
+</navigation>

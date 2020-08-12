@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -16,11 +17,11 @@ import com.aelayyuu.newsioapi.model.News
 import com.aelayyuu.newsioapi.viewmodel.NewViewModel
 import kotlinx.android.synthetic.main.fragment_top_headline.*
 
-var newsViewHolder = NewViewModel()
+
 
 class TopHeadlineFragment : Fragment() , ItemAdapter.ClickListener {
     lateinit var newViewModel: NewViewModel
-    lateinit var itemAdapter: ItemAdapter
+     var itemAdapter: ItemAdapter = ItemAdapter()
 
 
     override fun onCreateView(
@@ -33,26 +34,25 @@ class TopHeadlineFragment : Fragment() , ItemAdapter.ClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
+        newViewModel = ViewModelProvider(this).get(NewViewModel::class.java)
+
+
+        RecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = itemAdapter
+
+        }
         itemAdapter.setOnClickListener(this)
-
-        newsViewHolder = ViewModelProvider(this).get(NewViewModel::class.java)
-        newsViewHolder.loadResult()
-
-        newsViewHolder.getResult().observe(viewLifecycleOwner, Observer {
-
-            RecyclerView.apply {
-                layoutManager = LinearLayoutManager(context)
-                adapter = ItemAdapter(it.articles as ArrayList<Article>)
-
-            }
-        })
+        observeViewmodel()
 
     }
     fun observeViewmodel() {
-        newsViewHolder.getResult().observe(viewLifecycleOwner, Observer<News> { news ->
+        newViewModel.getResult().observe(viewLifecycleOwner, Observer<News> { news ->
             itemAdapter.updateArticle(news.articles as ArrayList<Article>)
         })
-        newsViewHolder.getloading().observe(
+        newViewModel.getloading().observe(
             viewLifecycleOwner, Observer { isLoading ->
                 if (isLoading) {
                     View.VISIBLE
@@ -61,10 +61,10 @@ class TopHeadlineFragment : Fragment() , ItemAdapter.ClickListener {
                 }
             }
         )
-        newsViewHolder.geterrorStatus().observe(
+        newViewModel.geterrorStatus().observe(
             viewLifecycleOwner, Observer { status ->
                 if (status) {
-                    newsViewHolder.geterrorMessage().observe(
+                    newViewModel.geterrorMessage().observe(
                         viewLifecycleOwner, Observer { message ->
                             txtResponse.text = message
                         }
@@ -76,9 +76,10 @@ class TopHeadlineFragment : Fragment() , ItemAdapter.ClickListener {
 
     override fun onResume() {
         super.onResume()
-        newsViewHolder.loadResult()
+        newViewModel.loadResult()
     }
     override fun onClick(article: Article) {
+        Toast.makeText(context,"Hello",Toast.LENGTH_LONG).show()
         findNavController().navigate(R.id.action_topHeadlineFragment_to_detailNewsFragment)
     }
 }

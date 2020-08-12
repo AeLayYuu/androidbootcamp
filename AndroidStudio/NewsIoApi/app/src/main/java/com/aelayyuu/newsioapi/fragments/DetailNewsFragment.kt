@@ -26,15 +26,7 @@ class DetailNewsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        newsViewHolder = ViewModelProvider(this).get(NewViewModel::class.java)
-        newsViewHolder.loadResult()
-        newsViewHolder.getResult().observe(viewLifecycleOwner, Observer {
-            RecyclerView.apply {
-                layoutManager= LinearLayoutManager(context)
-                adapter= ItemAdapter(it.articles as ArrayList<Article>)
 
-            }
-        })
 
     }
 }

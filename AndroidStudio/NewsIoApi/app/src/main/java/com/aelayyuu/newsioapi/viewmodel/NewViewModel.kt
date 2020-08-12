@@ -1,5 +1,6 @@
 package com.aelayyuu.newsioapi.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -32,6 +33,7 @@ class NewViewModel : ViewModel() {
                 loading.value = false
                 errorStatus.value = true
                 result.value = response.body()
+                Log.d("response",response.body().toString())
             }
 
         })
