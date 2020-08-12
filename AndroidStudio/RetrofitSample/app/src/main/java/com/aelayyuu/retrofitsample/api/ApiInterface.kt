@@ -10,5 +10,7 @@ interface ApiInterface {
     fun getPost(): Call<ArrayList<PostItem>>
 
     @GET("posts/{postID}")
-    fun getPostWithID(@Path("postID")postId : Int) : Call<PostItem>
+    fun getPostWithID(
+        @Path("postID") postId: Int
+    ): Call<PostItem>
 }

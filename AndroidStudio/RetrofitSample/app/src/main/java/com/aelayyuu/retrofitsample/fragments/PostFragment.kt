@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.aelayyuu.retrofitsample.R
 import com.aelayyuu.retrofitsample.api.ApiClient
 import com.aelayyuu.retrofitsample.model.PostItem
@@ -28,6 +29,7 @@ class PostFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("response>>>>>>>>>>", "asdfgh")
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_post, container, false)
     }
@@ -39,7 +41,8 @@ class PostFragment : Fragment() {
 
         apiCall.enqueue(object : Callback<PostItem> {
             override fun onFailure(call: Call<PostItem>, t: Throwable) {
-                Log.d("response>>>>>>>>>>", t.body().toString())
+                Toast.makeText(context,t.toString(),Toast.LENGTH_LONG).show()
+                Log.d("response>>>>>>>>>>", t.toString())
             }
 
             override fun onResponse(call: Call<PostItem>, response: Response<PostItem>) {
