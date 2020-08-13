@@ -15,7 +15,7 @@ class TopHeadlinesAdapter(var newList: List<Article> = ArrayList()) :
     RecyclerView.Adapter<TopHeadlinesAdapter.NewsViewHolder>() {
 
     var mCLickListener: CLickListener? = null
-    
+
     fun setOnCLickListener(clcikListener: TopHeadlinesFragment) {
         this.mCLickListener = clcikListener
     }
