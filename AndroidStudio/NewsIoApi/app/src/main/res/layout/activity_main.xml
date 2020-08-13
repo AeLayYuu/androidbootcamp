@@ -17,4 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
        />
+
+    //nomore fragments in this layout
+
 </androidx.constraintlayout.widget.ConstraintLayout>

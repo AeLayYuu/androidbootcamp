@@ -7,7 +7,9 @@ import retrofit2.http.Query
 import java.nio.channels.spi.AbstractSelectionKey
 
 interface NewApiIInterface {
+
     @GET("top-headlines")
+
     fun getTopHeadlines(
         @Query("country") country: String,//due to query
         @Query("apiKey") apiKey: String

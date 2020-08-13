@@ -22,3 +22,5 @@
     </application>
 
 </manifest>
+
+    <!--        android:usesCleartextTraffic="true"no ssl websites for secure traffic -->

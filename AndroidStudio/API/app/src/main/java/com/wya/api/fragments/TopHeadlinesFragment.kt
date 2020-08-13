@@ -35,8 +35,13 @@ class TopHeadlinesFragment : Fragment(), TopHeadlinesAdapter.CLickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        newsViewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
+        newsViewModel = ViewModelProvider(this)
+            .get(NewsViewModel::class.java)
+
+
         topHeadlinesAdapter= TopHeadlinesAdapter()
+
+
         //for click
         topHeadlinesAdapter.setOnCLickListener(this)
 
@@ -44,7 +49,14 @@ class TopHeadlinesFragment : Fragment(), TopHeadlinesAdapter.CLickListener {
             layoutManager = LinearLayoutManager(context)
             adapter = topHeadlinesAdapter
         }
-        observeViewModel()
+//        fun observeViewModel() {
+//            newsViewModel.getResult().observe(
+//                viewLifecycleOwner, Observer {
+//                    topHeadlinesAdapter.updateArticle()
+//
+//                }
+//            )
+//        }
     }
 
     override fun onResume() {
@@ -54,7 +66,7 @@ class TopHeadlinesFragment : Fragment(), TopHeadlinesAdapter.CLickListener {
 
     fun observeViewModel() {
         newsViewModel.getResult()
-            .observe(viewLifecycleOwner, Observer<News> { news ->//observe use due to livedata
+            .observe(viewLifecycleOwner, Observer<News> { news ->       //observe use due to livedata
                 topHeadlinesAdapter.updateArticle(news.articles as ArrayList<Article>)
             })
 
