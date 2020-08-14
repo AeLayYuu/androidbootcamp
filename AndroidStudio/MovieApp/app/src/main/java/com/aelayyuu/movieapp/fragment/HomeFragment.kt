@@ -1,10 +1,10 @@
 package com.aelayyuu.movieapp.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -40,14 +40,14 @@ class HomeFragment : Fragment(), HomeAdapter.ClickListener {
             layoutManager = LinearLayoutManager(context)
             adapter = homeAdapter
         }
-        homeAdapter.(this)
+        homeAdapter.
         observeViewmodel()
     }
 
     private fun observeViewmodel() {
         newsViewmodel.getResult().observe(
             viewLifecycleOwner, Observer { news ->
-                homeAdapter.updateArticle(news.articles)
+                homeAdapter
             }
         )
     }
@@ -57,15 +57,10 @@ class HomeFragment : Fragment(), HomeAdapter.ClickListener {
         newsViewmodel.loadNews()
     }
 
-    override fun onClcik(article: Article) {
-//        findNavController().navigate(R.id.action_homeFragment_to_detailFragment)
-        var action = HomeFragmentDirections
-            .actionHomeFragmentToDetailFragment(article.url)
-        findNavController().navigate(action)
-    }
 
-    override fun onClick(resultApi: ResultApi) {
-        TODO("Not yet implemented")
+    override fun onClcik(resultApi: ResultApi) {
+        var action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(resultApi.title)
+        findNavController().navigate(action)
     }
 
 }

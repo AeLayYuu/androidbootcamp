@@ -16,7 +16,8 @@ class ApiClient {
     private val apiInterface: ApiClient
 
     init {
-        val retrofit = Retrofit.Builder()
+        val retrofit =
+            Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -26,12 +27,12 @@ class ApiClient {
     }
 
     fun getTopHeadlines(
-        country: String,
-        category: String,
+        language: String,
+        page: String,
         apiKey: String
     ): Call<ResultApi> {
         return apiInterface.getTopHeadlines(
-            country, category, apiKey
+            language, page, apiKey
         )
     }
 

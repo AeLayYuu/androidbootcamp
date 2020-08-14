@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.aelayyuu.movieapp.R
+import com.aelayyuu.movieapp.fragment.HomeFragment
 import com.aelayyuu.movieapp.model.ResultApi
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_home.view.*
 
-abstract class HomeAdapter(var ArticleList: List<ResultApi> = ArrayList<ResultApi>()) :
+class HomeAdapter(var ArticleList: List<ResultApi> = ArrayList<ResultApi>()) :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     inner class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
@@ -38,35 +39,33 @@ abstract class HomeAdapter(var ArticleList: List<ResultApi> = ArrayList<ResultAp
         }
 
         var mClickListener: ClickListener? = null
-        fun setOnClickListener(clickListener: ClickListener) {
+
+        fun setOnClickListener(clickListener: HomeFragment) {
             this.mClickListener = clickListener
         }
-
-
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): HomeAdapter.HomeViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_home, parent, false)
-            return HomeViewHolder(view)
-        }
-
-        override fun getItemCount(): Int {
-            return ArticleList.size
-        }
-
-        override fun onBindViewHolder(holder: HomeAdapter.HomeViewHolder, position: Int) {
-            holder.bind(holder.bind(articleList.get(position)).get(position))
-
-        }
-
-        interface ClickListener {
-            fun onClcik(article: ResultApi)
-        }
-
         override fun onClick(v: View?) {
             mClickListener?.onClcik(article)
         }
+    }
+    interface ClickListener {
+        fun onClcik(article: ResultApi)
+    }
+
+    fun updateArticle(articleList: List<ResultApi>) {
+        this.ArticleList = articleList
+        notifyDataSetChanged()
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
+        var view = LayoutInflater.from(parent.context).inflate(R.layout.item_home,parent,false)
+        return HomeViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return ArticleList.size
+    }
+
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
+        holder.bind(ArticleList.get(position))
     }
 }

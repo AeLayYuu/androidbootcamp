@@ -1,18 +1,22 @@
 package com.aelayyuu.movieapp.api
 
+import android.graphics.pdf.PdfDocument
+import com.aelayyuu.movieapp.model.ResultApi
+import com.aelayyuu.movieapp.model.PopularModel
+import org.intellij.lang.annotations.Language
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-class ApiInterface {
+interface ApiInterface {
 
+    @GET("popular")
 
-    @GET("top-headlines")
-    
     fun getTopHeadlines(
-        @Query("country") country: String,
-        @Query("category") category: String,
+
+        @Query("language") language: String,
+        @Query("page") page: String,
         @Query("apiKey") apiKey: String
-    ): Call<Result>
+    ): Call<ResultApi>
 
 }
