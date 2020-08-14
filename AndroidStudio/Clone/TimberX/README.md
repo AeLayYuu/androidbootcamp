@@ -22,7 +22,7 @@ TimberX works across all devices including
 
 If you are looking for more UI customisability, instead checkout out [Timber](https://github.com/naman14/Timber).
 
-# Phones
+##Phones
 
 <p float="left">
   <img src="https://raw.githubusercontent.com/naman14/TimberX/master/art/phone1.png" width="170" />
