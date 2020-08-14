@@ -1,5 +1,6 @@
 package com.aelayyuu.retrofitpost.model
 
 data class City(
-    val cities: List<CityX>
+    val city: CityX,
+    val message: String
 )
