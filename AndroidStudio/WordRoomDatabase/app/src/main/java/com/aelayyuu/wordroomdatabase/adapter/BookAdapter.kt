@@ -27,5 +27,9 @@ class BookAdapter(var booklist: ArrayList<Book>) :
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         return holder.bind(booklist[position])
     }
+    override fun addBookList(book : List<Book>) {
+        this.booklist = book
+        notifyDataSetChanged()
+    }
 
 }

@@ -3,9 +3,12 @@ package com.aelayyuu.wordroomdatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.ViewModelProvider
 import androidx.room.Room
+import com.aelayyuu.wordroomdatabase.adapter.BookAdapter
 import com.aelayyuu.wordroomdatabase.database.BookDataBase
 import com.aelayyuu.wordroomdatabase.model.Book
+import com.aelayyuu.wordroomdatabase.viewmodel.BookViewModel
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,4 +40,7 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }.start()
     }
+    val bookViewModel = ViewModelProvider(this).get(BookViewModel::class.java)
+    val bookAdapter = BookAdapter()
+    
 }
