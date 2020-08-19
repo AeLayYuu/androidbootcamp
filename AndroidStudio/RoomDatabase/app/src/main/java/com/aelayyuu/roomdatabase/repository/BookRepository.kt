@@ -10,4 +10,8 @@ class BookRepository (private val bookDao : BookDao) {
     suspend fun insert(book : Book) {
         bookDao.insert(book)
     }
+
+    suspend fun delete(){
+        bookDao.deleteAll()
+    }
 }

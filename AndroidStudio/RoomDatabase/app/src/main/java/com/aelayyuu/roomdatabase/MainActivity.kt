@@ -46,6 +46,9 @@ class MainActivity : AppCompatActivity() {
 //            startActivity(intent)
             startActivityForResult(intent, addBookActivityRequestCode)
         }
+        btnDelete.setOnClickListener{
+            bookViewModel.delete()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
