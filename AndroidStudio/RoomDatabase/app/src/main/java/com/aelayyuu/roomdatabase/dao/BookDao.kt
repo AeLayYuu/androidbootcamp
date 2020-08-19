@@ -15,5 +15,5 @@ interface BookDao {
     fun getAllBook(): LiveData<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(book: Book)
+    suspend fun insert(book: Book) //please add suspend
 }

@@ -8,10 +8,6 @@ import androidx.room.PrimaryKey
 //    (tableName = "book_table")
 class Book  (
     @PrimaryKey
-
-    @ColumnInfo(name = "id")
-    var bookID : Int,
-
     @ColumnInfo(name = "book_name")
     var bookName : String
 )     //that's data class can you see?
