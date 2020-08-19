@@ -27,4 +27,7 @@ class BookViewModel(application: Application) : AndroidViewModel(application) {
     fun delete() = viewModelScope.launch {
         repository.delete()
     }
+    fun deleteItem(name : String) =viewModelScope.launch {
+        repository.deleteItem(name)
+    }
 }

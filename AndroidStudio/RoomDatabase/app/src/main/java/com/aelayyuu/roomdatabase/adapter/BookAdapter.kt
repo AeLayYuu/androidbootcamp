@@ -9,12 +9,28 @@ import com.aelayyuu.roomdatabase.model.Book
 import kotlinx.android.synthetic.main.item_book.view.*
 
 class BookAdapter:RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
-    private var books = emptyList<Book>()
 
+    private var mClickListener : ClickListener?=null
+    fun setOnClickListener(clickListener: ClickListener) {
+        this.mClickListener= clickListener
+    }
+    private var books = emptyList<Book>()
     inner class BookViewHolder(itemview: View):
-            RecyclerView.ViewHolder(itemview) {
+            RecyclerView.ViewHolder(itemview),
+    View.OnClickListener{
+        init {
+            itemview.setOnClickListener(this)
+        }
+        lateinit var book: Book
+
+
         fun bind ( book: Book) {
+            this.book = book
             itemView.txtBookName.text = book.bookName
+        }
+
+        override fun onClick(view: View?) {
+            mClickListener?.onClick(book)
         }
     }
 
@@ -35,4 +51,9 @@ class BookAdapter:RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
     override fun getItemCount(): Int {
         return books.size
     }
+
+    interface ClickListener {
+        fun onClick(book: Book)
+    }
+
 }

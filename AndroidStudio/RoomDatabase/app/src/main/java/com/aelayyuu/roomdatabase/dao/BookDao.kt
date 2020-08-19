@@ -17,4 +17,7 @@ interface BookDao {
     @Query("DELETE FROM book_table")
     suspend fun deleteAll()
 
+    @Query("DELETE FROM book_table WHERE book_name = :name")
+    suspend fun deleteItem(name: String)
+
 }

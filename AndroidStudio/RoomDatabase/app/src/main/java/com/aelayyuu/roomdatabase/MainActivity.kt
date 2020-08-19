@@ -1,6 +1,7 @@
 package com.aelayyuu.roomdatabase
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -13,15 +14,16 @@ import com.aelayyuu.roomdatabase.model.Book
 import com.aelayyuu.roomdatabase.viewmodel.BookViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(),BookAdapter.ClickListener {
     private lateinit var bookViewModel: BookViewModel
     private val addBookActivityRequestCode = 1
+    private lateinit var bookAdapter : BookAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bookAdapter = BookAdapter()
+      bookAdapter = BookAdapter()
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = bookAdapter
@@ -54,13 +56,23 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == addBookActivityRequestCode
-            && resultCode == Activity.RESULT_OK) {
+        if (requestCode == addBookActivityRequestCode
+            && resultCode == Activity.RESULT_OK
+        ) {
             data?.getStringExtra(AddBookActivity.EXTRA_REPLY)?.let {
-                    val book = Book(it)
+                val book = Book(it)
                 bookViewModel.insert(book)
-                }
+            }
         }
+    }
+    override fun onClick(book:Book) {
+
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setTitle("Delete item")
+            setMessage()
+        }
+        bookViewModel.deleteItem(book.bookName)
     }
 
 //        val db = Room.databaseBuilder(
