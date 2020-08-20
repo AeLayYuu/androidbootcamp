@@ -1,0 +1,7 @@
+package com.aelayyuu.something.model.castview
+
+data class Casts(
+    val cast: List<Cast>,
+    val crew: List<Crew>,
+    val id: Int
+)

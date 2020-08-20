@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.aelayyuu.wordroomdatabase.R
 import com.aelayyuu.wordroomdatabase.model.Book
 import com.aelayyuu.wordroomdatabase.viewmodel.BookViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment() {
@@ -28,7 +27,7 @@ class HomeFragment : Fragment() {
         val bookViewModel = ViewModelProvider(this)
             .get(BookViewModel::class.java)
 
-        bookViewModel.insert(Book(9,"Android"))
+        bookViewModel.insert(Book("20","BookName"))
         bookViewModel.allBook.observe (
             viewLifecycleOwner, Observer {
                 book ->

@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity(),BookAdapter.ClickListener {
             layoutManager = LinearLayoutManager(context)
             adapter = bookAdapter
         }
+        bookAdapter.setOnClickListener(this)
 
         bookViewModel = ViewModelProviders.of(this)
             .get(BookViewModel::class.java)
@@ -70,9 +72,20 @@ class MainActivity : AppCompatActivity(),BookAdapter.ClickListener {
         val builder = AlertDialog.Builder(this)
         builder.apply {
             setTitle("Delete item")
-            setMessage()
+            setMessage("Are You Sure ?")
+            setIcon(android.R.drawable.ic_dialog_alert)
+            setPositiveButton("Yes"){
+                dialogInterface, i ->
+                bookViewModel.deleteItem(book.bookName)
+            }
+            setNegativeButton("No"){
+                dialogInterface, i ->
+                Toast.makeText(applicationContext,
+                "Delete Cancel",Toast.LENGTH_LONG).show()
+            }
         }
-        bookViewModel.deleteItem(book.bookName)
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
 
 //        val db = Room.databaseBuilder(

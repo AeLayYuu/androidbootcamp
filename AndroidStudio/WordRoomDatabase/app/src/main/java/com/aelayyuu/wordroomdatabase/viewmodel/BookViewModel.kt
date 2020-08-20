@@ -3,26 +3,35 @@ package com.aelayyuu.wordroomdatabase.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.aelayyuu.wordroomdatabase.database.BookDataBase
 import com.aelayyuu.wordroomdatabase.model.Book
 import com.aelayyuu.wordroomdatabase.repository.BookRepository
 import kotlinx.coroutines.launch
 
-class BookViewModel(application: Application) : AndroidViewModel(application) {
+class BookViewModel(application: Application): AndroidViewModel(application) {
 
-    private val repository : BookRepository
-    val allBook : LiveData<List<Book>>
+    private val repository: BookRepository
+    val allBook: LiveData<List<Book>>
 
     init {
-        val bookDao = BookDataBase.getDatabase(
-            application).bookDao()
-
+        val bookDao = BookDataBase.getDatabase(application).bookDao()
         repository = BookRepository(bookDao)
         allBook = repository.allBook
     }
-    fun insert(book : Book) = viewModelScope.launch {
-        repository.bookInsert(book)
 
+    fun insert(book: Book) = viewModelScope.launch {
+        repository.bookInsert(book)
+    }
+
+    fun delete() = viewModelScope.launch {
+        repository.bookDelete()
+    }
+    fun deleteItem(name: String)=viewModelScope.launch {
+        repository.deleteItem(name)
+    }
+    fun updateItem(updateName: String,name: String)= viewModelScope.launch{
+        repository.updateItem(updateName,name)
     }
 }

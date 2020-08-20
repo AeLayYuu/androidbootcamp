@@ -6,12 +6,12 @@ import androidx.room.PrimaryKey
 
 @Entity
 //    (tableName = "book_table")
-class Book  (
+class Book(
     @PrimaryKey
 
     @ColumnInfo(name = "id")
-    var bookID : Int,
+    var bookID: String,
 
     @ColumnInfo(name = "book_name")
-    var bookName : String
+    var bookName: String
 )     //that's data class can you see?
