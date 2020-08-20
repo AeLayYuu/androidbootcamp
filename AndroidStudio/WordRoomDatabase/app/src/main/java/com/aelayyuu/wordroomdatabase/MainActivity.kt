@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.aelayyuu.wordroomdatabase.adapter.BookAdapter
 import com.aelayyuu.wordroomdatabase.model.Book
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity(),BookAdapter.CLickListener {
         bookAdapter.setOnClickListener(this)
 
 
-        bookViewModel= ViewModelProvider.of(this).get(BookViewModel::class.java)
+        bookViewModel= ViewModelProviders.of(this).get(BookViewModel::class.java)
 
         bookViewModel.allBook.observe(
             this, Observer { book ->

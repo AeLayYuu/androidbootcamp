@@ -8,7 +8,7 @@ import com.aelayyuu.wordroomdatabase.dao.BookDao
 import com.aelayyuu.wordroomdatabase.model.Book
 import java.security.AccessControlContext
 
-@Database(entities = [(Book::class)], version = 1)
+@Database(entities = [(Book::class)], version = 2)
 abstract class BookDataBase : RoomDatabase(){
     abstract fun bookDao() : BookDao
 
@@ -22,7 +22,7 @@ abstract class BookDataBase : RoomDatabase(){
             }
             synchronized(this) {
                 val instance = Room.databaseBuilder(
-                context,
+                context.applicationContext,
                 BookDataBase::class.java,
                 "BookDB"
                 ).build()
