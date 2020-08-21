@@ -52,4 +52,8 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.ProductViewHolder>(){
     interface ClickListener {
         fun onClick(productRoom: Product_Room)
     }
+    fun addProductList(product: List<Product_Room>) {
+        this.products = product
+        notifyDataSetChanged()
+    }
 }

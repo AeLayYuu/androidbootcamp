@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/BtnAdd"
+        android:id="@+id/btnAdd"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Add"
@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Delete"
-        app:layout_constraintLeft_toRightOf="@id/BtnAdd"
+        app:layout_constraintLeft_toRightOf="@id/btnAdd"
         app:layout_constraintRight_toRightOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/BtnAdd"/>
+        app:layout_constraintTop_toBottomOf="@id/btnAdd"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
