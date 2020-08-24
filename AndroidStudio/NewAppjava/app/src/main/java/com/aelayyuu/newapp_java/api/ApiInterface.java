@@ -1,4 +1,16 @@
 package com.aelayyuu.newapp_java.api;
 
-public class ApiInterface {
+import com.aelayyuu.newapp_java.model.News;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
+interface ApiInterface {
+
+    @GET("top-headlines")
+    Call<News> getNews(
+            @Query("country") String country,
+            @Query("apiKey") String apiKey
+    );
 }

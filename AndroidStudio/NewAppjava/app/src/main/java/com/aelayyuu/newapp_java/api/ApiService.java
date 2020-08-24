@@ -14,12 +14,9 @@ public class ApiService {
         );
         return apiInterface;
     }
-
-    public static Call<News> getNews (
-            String country , String category , String apiKey
+    public static Call<News> getNews(
+            String country , String apiKey
     ){
-        return apiInterface.getNews(
-                country, category, apiKey
-        );
+        return ApiService.getApiInterface().getNews(country,apiKey);
     }
 }

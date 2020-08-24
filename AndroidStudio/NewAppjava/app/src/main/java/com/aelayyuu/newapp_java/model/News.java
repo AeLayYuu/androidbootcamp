@@ -14,12 +14,24 @@ public class News {
 	@SerializedName("status")
 	private String status;
 
+	public void setTotalResults(int totalResults){
+		this.totalResults = totalResults;
+	}
+
 	public int getTotalResults(){
 		return totalResults;
 	}
 
+	public void setArticles(List<ArticlesItem> articles){
+		this.articles = articles;
+	}
+
 	public List<ArticlesItem> getArticles(){
 		return articles;
+	}
+
+	public void setStatus(String status){
+		this.status = status;
 	}
 
 	public String getStatus(){
