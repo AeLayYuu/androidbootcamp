@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,7 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.SearchView;
+
 
 import com.aelayyuu.newapp_java.R;
 import com.aelayyuu.newapp_java.adapter.NewsAdapter;
@@ -42,6 +43,7 @@ public class ArticleFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_article, container , false);
 
         recyclerView = root.findViewById(R.id.recyclerview);
+        progressBar = root.findViewById(R.id.loadingView);
         newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -51,7 +53,20 @@ public class ArticleFragment extends Fragment {
         newsViewModel.getResult().observe(
                 getViewLifecycleOwner(),news ->
                         newsAdapter.updateArticle(news.getArticles())
+
+
         );
+        newsViewModel.getLoading().observe(
+                getViewLifecycleOwner(),loading ->{
+                    if (loading){
+                        progressBar.setVisibility(View.VISIBLE);
+        }
+                    else {
+                        progressBar.setVisibility(View.INVISIBLE);
+        }
+                }
+        );
+
 
         // Inflate the layout for this fragment
         return root;
@@ -74,7 +89,7 @@ public class ArticleFragment extends Fragment {
         if (searchItem != null) {
             searchView = (SearchView) searchItem.getActionView();
         }
-        if(searchItem != null) {
+        if(searchView != null) {
             searchView.setSearchableInfo(
                     searchManager.getSearchableInfo(
                     getActivity().getComponentName()));
@@ -92,6 +107,7 @@ public class ArticleFragment extends Fragment {
                     return false;
                 }
             };
+            searchView.setOnQueryTextListener(queryTextListener);
         }
     }
 }
