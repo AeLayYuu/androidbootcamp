@@ -81,7 +81,8 @@ class _HomePageState extends State<HomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Details(news: news)));
+                                  builder: (context) => Details(news: news)
+                                  ));
                         },
                         child: Card(
                           child: Row(
