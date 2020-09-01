@@ -99,6 +99,7 @@ class _SignInSignUpPageState extends State<SignInSignUpPage> {
     return Container(
       padding: EdgeInsets.all(16),
       child: Form(
+        key: formKey,
           child: ListView(
         children: [
           showEmailInput(),
