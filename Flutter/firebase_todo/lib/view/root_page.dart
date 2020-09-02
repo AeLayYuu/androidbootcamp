@@ -1,5 +1,6 @@
 import 'package:firebase_todo/services/authentication.dart';
 import 'package:firebase_todo/services/signin_signup_page.dart';
+import 'package:firebase_todo/view/home_page.dart';
 import 'package:flutter/material.dart';
 
 enum AuthStatus {
@@ -71,6 +72,14 @@ class _RootPageState extends State<RootPage> {
             auth: widget.auth, singninCallback: signinCallback);
         break;
       case AuthStatus.SIGN_IN:
+        if (userId.length > 0 && userId != null) {
+          return HomePage(
+            auth: widget.auth,
+            signoutCallback: signOutCallback,
+            userId: userId,
+          );
+        } else
+          return waitingScreen();
         break;
 
       default:

@@ -1,13 +1,13 @@
 import 'package:firebase_database/firebase_database.dart';
 
-class ToDo {
+class Todo {
   String key;
   String subject;
   bool completed;
   String userId;
 
-  ToDo(this.subject, this.completed, this.userId);
-  ToDo.fromSnapShot(DataSnapshot snapshot)
+  Todo(this.subject, this.completed, this.userId);
+  Todo.fromSnapShot(DataSnapshot snapshot)
       : key = snapshot.key,
         userId = snapshot.value["userId"],
         subject = snapshot.value["subject"],
