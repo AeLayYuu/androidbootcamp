@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.OtpFragment">
+
+    <TextView
+        android:id="@+id/dTwoOtp"
+        android:layout_width="match_parent"
+        android:layout_height="97dp"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textSize="30sp"
+        android:textColor="#D40202"
+        android:background="#E2A4FF"
+        android:text="@string/d_myanmar"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:padding="30dp"
+        android:backgroundTint="#90FB9B"
+        android:hint="Type OTP"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="#ffffff"
+        android:backgroundTint="#90FB9B"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        l
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-7463383042493660/1250035787">
+    </com.google.android.gms.ads.AdView>
+
+</FrameLayout>
