@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">Myanmar2D</string>
+    <string name="app_name">2D Myanmar</string>
     <string name="d_myanmar">2D Myanmar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- -
+        This is an ad unit ID for an interstitial test ad. Replace with your own interstitial ad unit id.
+    -->
+    <string name="interstitial_ad_unit_id">ca-app-pub-7463383042493660/1605259005</string>
 </resources>
