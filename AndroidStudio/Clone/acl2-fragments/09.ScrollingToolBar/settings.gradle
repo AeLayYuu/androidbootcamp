@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name='09.Scrolling Tool Bar'

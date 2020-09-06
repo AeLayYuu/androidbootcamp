@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name='15. Extend LiveData'

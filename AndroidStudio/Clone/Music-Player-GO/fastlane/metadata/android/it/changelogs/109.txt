@@ -1,2 +1,0 @@
-- Aggiornate librerie e plugin;
-- Tentativo fix crash;

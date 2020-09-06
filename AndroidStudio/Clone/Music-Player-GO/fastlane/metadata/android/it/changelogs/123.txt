@@ -1,2 +1,0 @@
-- Corretto bug che impediva la riproduzione automatica della canzone successiva al termine della riproduzione di una canzone
-- Aggiornate traduzioni Turco

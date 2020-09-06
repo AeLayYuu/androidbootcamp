@@ -1,3 +1,0 @@
-- Rivisitazione WaveView
-- Cambiamenti minori alla UI
-- Correzioni alla pagina artista

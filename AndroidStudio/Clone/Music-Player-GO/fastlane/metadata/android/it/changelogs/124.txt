@@ -1,1 +1,0 @@
-La lista delle canzoni viene ripristinata alla posizione iniziale quando si cambia album
